@@ -8,6 +8,8 @@ const db = require('./connection/db');
 //configuracion express
 const express = require("express");
 const app = express();
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 app.use(require('./routes/index.routes'));
 
